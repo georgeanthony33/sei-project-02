@@ -4,7 +4,6 @@ import MapGL, { Marker } from 'react-map-gl'
 import 'mapbox-gl/dist/mapbox-gl.css'
 const mapboxToken = process.env.MAPBOX_ACCESS_TOKEN
 import { Link } from 'react-router-dom'
-const apiKey = process.env.MY_API_KEY
 
 class EventShow extends React.Component {
   state = {
@@ -18,7 +17,7 @@ class EventShow extends React.Component {
 
   searchEvents = async (eId) => {
     try {
-      const { data } = await axios.get(`https://www.skiddle.com/api/v1/events/${eId}/?api_key=${apiKey}`)
+      const { data } = await axios.get(`https://www.skiddle.com/api/v1/events/${eId}/?api_key=a1a7670d52f1193d3045c6ee90c3b5bc`)
       this.setState({ searchResult: data.results })
       console.log(data.results)
     } catch (err) {
